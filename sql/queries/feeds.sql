@@ -16,7 +16,7 @@ SELECT * FROM feeds;
 -- name: GetFeedByURL :one
 SELECT * FROM feeds WHERE feeds.url = $1;
 
--- name: MarkFeedFetched :exec
+-- name: MarkFeedFetched :one
 UPDATE feeds
 SET
     last_fetched_at = NOW(),
